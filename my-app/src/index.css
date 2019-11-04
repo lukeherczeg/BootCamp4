@@ -39,9 +39,9 @@ tr {
 	padding: 0;
 }
 th {
-	position: center;
+	position: left;
 	list-style: none;
-	padding: 0.5rem 0.75rem;
+	padding: 0.1rem .75rem;
 	margin: 3px;
 	border-radius: 2px;
 }

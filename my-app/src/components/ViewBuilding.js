@@ -3,13 +3,13 @@ import React from 'react';
 class ViewBuilding extends React.Component {
 	render() {
 	    const { data, selectedBuilding } = this.props;
-	    if (selectedBuilding >= 0 && selectedBuilding < data.length)
+	    if (selectedBuilding >= 0)
 	    {
 	        const building = data[selectedBuilding];
 	        return (
 				<div>
 					<b>Building Information:</b>
-					<table cellSpacing="10" cellPadding="10">
+					<table cellSpacing="9" cellPadding="9">
 						<tbody>
 						<tr>
 							<td> Code:           </td>
@@ -36,7 +36,7 @@ class ViewBuilding extends React.Component {
                 : null
 	        }
 	        {
-	            (building.hasOwnProperty("coordinates") && building.coordinates.longitude != null) ?
+	            (building.hasOwnProperty("coordinates")) ?
                 <tr>
                     <td> Longitude:                       </td>
                     <td> {building.coordinates.longitude} </td>

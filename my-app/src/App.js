@@ -25,18 +25,16 @@ class App extends React.Component {
     }
 
   filterUpdate(value) {
-    //Here you will need to set the filterText property of state to the value passed into this function
       this.setState({ filterText: value });
   }
 
   selectedUpdate(id) {
-      //Here you will need to update the selectedBuilding property of state to the id passed into this function
       this.setState({ selectedBuilding: id });
   }
 
 
   removeBuilding() {
-      if (this.state.selectedBuilding < this.state.data.length && this.state.selectedBuilding >= 0)
+      if (this.state.selectedBuilding >= 0)
       {
           this.setState({
               data: removeElement(this.state.data, this.state.selectedBuilding),
@@ -70,9 +68,8 @@ class App extends React.Component {
                   <table>
                   <tbody>
                       <tr>
-                        <td>
-                        <b>Code Building</b>
-                        </td>
+                        <th> <b>Code</b>    </th>
+                        <th> <b>Building</b> </th>
                       </tr>
                     </tbody>
                   </table>
@@ -93,7 +90,7 @@ class App extends React.Component {
               selectedBuilding={this.state.selectedBuilding}
               />
               {
-                 (this.state.selectedBuilding >= 0 && this.state.selectedBuilding < this.state.data.length)  ?
+                 (this.state.selectedBuilding >= 0)  ?
                     <RemoveBuilding
                         removeBuilding={this.removeBuilding.bind(this)}
                      /> 

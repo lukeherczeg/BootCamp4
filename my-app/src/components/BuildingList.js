@@ -6,7 +6,7 @@ class BuilingList extends React.Component {
 	    const { data, filterText, selectedUpdate } = this.props;
 
 	    const buildingList = data.filter((name) => {
-	        return name.name.toLowerCase().indexOf(filterText) >= 0
+	        return name.name.toLowerCase().indexOf(filterText.toLowerCase()) >= 0
 	    })
 		.map((directory,index) => {
 			return (
